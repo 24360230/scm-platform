@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strategic Casemaking Platform</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F8F9FA;
+      color: #2D3748;
+      line-height: 1.6;
+    }
+    header {
+      background: #1E3A5F;
+      color: white;
+      padding: 48px 24px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    main {
+      max-width: 720px;
+      margin: 48px auto;
+      padding: 0 24px;
+    }
+    .intro {
+      background: white;
+      border-radius: 8px;
+      padding: 32px;
+      margin-bottom: 32px;
+      border-left: 4px solid #1E3A5F;
+    }
+    .intro p {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .intro p:last-child { margin-bottom: 0; }
+    .modules {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .module-card {
+      background: white;
+      border-radius: 8px;
+      padding: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      border: 1px solid #E2E8F0;
+    }
+    .module-number {
+      background: #1E3A5F;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .module-number.locked {
+      background: #CBD5E0;
+    }
+    .module-info h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .module-info p {
+      font-size: 0.9rem;
+      color: #718096;
+    }
+    .cta {
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      background: #C47B1A;
+      color: white;
+      padding: 16px 40px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #A66515; }
+    footer {
+      text-align: center;
+      padding: 32px;
+      font-size: 0.85rem;
+      color: #A0AEC0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Strategic Casemaking Platform</h1>
+    <p>A guided tool for building persuasive, values-first cases for the issues that matter most.</p>
+  </header>
+  <main>
+    <div class="intro">
+      <p>Strategic Casemaking is a framework for advocates who need to move decision-makers — not by leading with data and crisis, but by building a bridge of shared values, clear obstacles, and credible solutions.</p>
+      <p>This platform guides you through that process one module at a time. You don't have to complete it in a single sitting. Build your case at your own pace.</p>
+    </div>
+    <div class="modules">
+      <div class="module-card">
+        <div class="module-number">0</div>
+        <div class="module-info">
+          <h3>Get Your Ground Game Ready</h3>
+          <p>Define your target stakeholder, the action you need them to take, and the adaptive challenge you're trying to solve.</p>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-number">1</div>
+        <div class="module-info">
+          <h3>Act 1 — Craft the Vision</h3>
+          <p>Establish the "WE and WHY." Lead with shared values and paint a vivid picture of the thriving future you both want.</p>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-number locked">2</div>
+        <div class="module-info">
+          <h3>Act 2 — Name the Obstacles <span style="color:#CBD5E0;font-weight:400;font-size:0.85rem;">(coming soon)</span></h3>
+          <p>Navigate dominant narratives, identify the systemic villain, and create strategic urgency.</p>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-number locked">3</div>
+        <div class="module-info">
+          <h3>Act 3 — Present the Breakthrough <span style="color:#CBD5E0;font-weight:400;font-size:0.85rem;">(coming soon)</span></h3>
+          <p>Anchor solutions, share your metrics, and define your value proposition.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cta">
+      <a href="module-0.html" class="btn">Start Building Your Case →</a>
+    </div>
+  </main>
+  <footer>Strategic Casemaking Platform — Proof of Concept</footer>
+</body>
+</html>

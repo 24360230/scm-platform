@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 1 — Craft the Vision | SCM Platform</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F8F9FA;
+      color: #2D3748;
+      line-height: 1.6;
+    }
+    header {
+      background: #1E3A5F;
+      color: white;
+      padding: 32px 24px;
+    }
+    header a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+    header a:hover { color: white; }
+    header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 6px; }
+    header p { opacity: 0.85; font-size: 0.95rem; max-width: 580px; }
+    main {
+      max-width: 680px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    .framing {
+      background: #EBF4FF;
+      border-left: 4px solid #1E3A5F;
+      border-radius: 0 6px 6px 0;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      color: #2C5282;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 32px;
+      border: 1px solid #E2E8F0;
+      margin-bottom: 24px;
+    }
+    .field { margin-bottom: 24px; }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+    .hint {
+      font-size: 0.85rem;
+      color: #718096;
+      margin-bottom: 8px;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #CBD5E0;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: #2D3748;
+      background: #FAFAFA;
+      transition: border-color 0.2s;
+    }
+    input[type="text"]:focus, textarea:focus {
+      outline: none;
+      border-color: #1E3A5F;
+      background: white;
+    }
+    textarea { resize: vertical; min-height: 90px; }
+    .btn-submit {
+      width: 100%;
+      background: #C47B1A;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { background: #A66515; }
+    .btn-submit:disabled { background: #CBD5E0; cursor: not-allowed; }
+    .spinner {
+      display: none;
+      text-align: center;
+      padding: 32px;
+      color: #718096;
+    }
+    .spinner p { margin-top: 12px; font-size: 0.95rem; }
+    .output-section { display: none; }
+    .output-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #1E3A5F;
+    }
+    .output-content {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .output-content h2, .output-content h3 {
+      margin: 16px 0 8px;
+      color: #1E3A5F;
+    }
+    .output-content p { margin-bottom: 12px; }
+    .coming-soon {
+      display: inline-block;
+      margin-top: 24px;
+      background: #E2E8F0;
+      color: #718096;
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .error {
+      background: #FFF5F5;
+      border: 1px solid #FC8181;
+      border-radius: 6px;
+      padding: 16px;
+      color: #C53030;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .no-session {
+      background: #FFFAF0;
+      border: 1px solid #F6AD55;
+      border-radius: 6px;
+      padding: 16px 20px;
+      color: #744210;
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Back to Dashboard</a>
+    <h1>Module 1 — Craft the Vision</h1>
+    <p>Lead with shared values. Paint a vivid picture of the thriving future you both want. Don't mention the problem yet.</p>
+  </header>
+  <main>
+    <div class="framing">
+      <strong>Act 1 focuses on the "WE and WHY."</strong> Your goal here is to establish trust and shared stake — not to describe the crisis. The best Vision Statements make your stakeholder feel seen as a partner, not targeted as a funder.
+    </div>
+
+    <div class="no-session" id="no-session">
+      ⚠️ No active session found. Please <a href="module-0.html">complete Module 0 first</a> before continuing.
+    </div>
+
+    <div class="card" id="form-section">
+      <div class="field">
+        <label for="value">What is one core value driving your work that will also resonate with your stakeholder?</label>
+        <div class="hint">Think about what you genuinely share — dignity, opportunity, safety, belonging.</div>
+        <input type="text" id="value" placeholder="e.g. Every young person deserves a real chance to thrive">
+      </div>
+      <div class="field">
+        <label for="vision">If you look 10–15 years into the future, what does your thriving community look like, feel like, and smell like?</label>
+        <div class="hint">Be specific and sensory. Avoid abstract policy language.</div>
+        <textarea id="vision" placeholder="e.g. A place where any family in crisis can find real help within 24 hours — where schools and clinics work as one, not in silos"></textarea>
+      </div>
+      <div class="field">
+        <label for="heroes">Who are the everyday people already doing extraordinary things on this issue?</label>
+        <div class="hint">Name the heroes on the ground — not organizations, but people.</div>
+        <textarea id="heroes" placeholder="e.g. School counselors stretching beyond their job descriptions, parents driving hours for the right therapist"></textarea>
+      </div>
+      <div class="field">
+        <label for="history">What shared history or experience connects you and your stakeholder?</label>
+        <div class="hint">A common moment, shared challenge, or mutual understanding that creates a "Big WE."</div>
+        <textarea id="history" placeholder="e.g. We've both watched this region weather hard times and come together when it decides something matters"></textarea>
+      </div>
+      <div class="error" id="error-msg">Please complete all fields before continuing.</div>
+      <button class="btn-submit" id="submit-btn" onclick="submitForm()">Draft My Vision Statement →</button>
+    </div>
+
+    <div class="spinner" id="spinner">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="16" stroke="#E2E8F0" stroke-width="4"/>
+        <path d="M20 4a16 16 0 0 1 16 16" stroke="#1E3A5F" stroke-width="4" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.8s" repeatCount="indefinite"/>
+        </path>
+      </svg>
+      <p>Drafting your Vision Statement...</p>
+    </div>
+
+    <div class="card output-section" id="output-section">
+      <h2>Your 45-Second Vision Statement</h2>
+      <div class="output-content" id="output-content"></div>
+      <div class="coming-soon">Module 2 — Name the Obstacles (coming soon)</div>
+    </div>
+  </main>
+
+  <script>
+    const sessionId = localStorage.getItem('scm_session_id');
+    if (!sessionId) {
+      document.getElementById('no-session').style.display = 'block';
+      document.getElementById('submit-btn').disabled = true;
+    }
+
+    async function submitForm() {
+      const value = document.getElementById('value').value.trim();
+      const vision = document.getElementById('vision').value.trim();
+      const heroes = document.getElementById('heroes').value.trim();
+      const history = document.getElementById('history').value.trim();
+
+      if (!value || !vision || !heroes || !history) {
+        document.getElementById('error-msg').style.display = 'block';
+        return;
+      }
+
+      document.getElementById('error-msg').style.display = 'none';
+      document.getElementById('submit-btn').disabled = true;
+      document.getElementById('spinner').style.display = 'block';
+
+      try {
+        const res = await fetch('https://n8n.srv1115812.hstgr.cloud/webhook/scm-module-1', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            session_id: sessionId,
+            value,
+            vision,
+            heroes,
+            history
+          })
+        });
+
+        if (!res.ok) throw new Error('Webhook error');
+        const data = await res.json();
+
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('form-section').style.display = 'none';
+        document.getElementById('output-section').style.display = 'block';
+        document.getElementById('output-content').innerHTML = marked.parse(data.output);
+
+      } catch (err) {
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('submit-btn').disabled = false;
+        document.getElementById('error-msg').style.display = 'block';
+        document.getElementById('error-msg').textContent = 'Something went wrong. Please try again in a moment.';
+      }
+    }
+  </script>
+</body>
+</html>

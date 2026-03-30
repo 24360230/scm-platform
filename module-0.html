@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 0 — Ground Game | SCM Platform</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F8F9FA;
+      color: #2D3748;
+      line-height: 1.6;
+    }
+    header {
+      background: #1E3A5F;
+      color: white;
+      padding: 32px 24px;
+    }
+    header a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+    header a:hover { color: white; }
+    header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 6px; }
+    header p { opacity: 0.85; font-size: 0.95rem; max-width: 580px; }
+    main {
+      max-width: 680px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 32px;
+      border: 1px solid #E2E8F0;
+      margin-bottom: 24px;
+    }
+    .field {
+      margin-bottom: 24px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+    .hint {
+      font-size: 0.85rem;
+      color: #718096;
+      margin-bottom: 8px;
+    }
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #CBD5E0;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: #2D3748;
+      background: #FAFAFA;
+      transition: border-color 0.2s;
+    }
+    input[type="text"]:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #1E3A5F;
+      background: white;
+    }
+    textarea { resize: vertical; min-height: 80px; }
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .radio-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid #CBD5E0;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .radio-option:hover { border-color: #1E3A5F; background: #EBF4FF; }
+    .radio-option input { margin-top: 2px; flex-shrink: 0; }
+    .radio-option span { font-size: 0.95rem; }
+    .radio-option small { display: block; color: #718096; font-size: 0.82rem; }
+    .btn-submit {
+      width: 100%;
+      background: #C47B1A;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { background: #A66515; }
+    .btn-submit:disabled { background: #CBD5E0; cursor: not-allowed; }
+    .spinner {
+      display: none;
+      text-align: center;
+      padding: 32px;
+      color: #718096;
+    }
+    .spinner p { margin-top: 12px; font-size: 0.95rem; }
+    .output-section { display: none; }
+    .output-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #1E3A5F;
+    }
+    .output-content {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .output-content h2, .output-content h3 {
+      margin: 16px 0 8px;
+      color: #1E3A5F;
+    }
+    .output-content p { margin-bottom: 12px; }
+    .output-content strong { color: #2D3748; }
+    .output-content em { color: #4A5568; }
+    .btn-next {
+      display: inline-block;
+      margin-top: 24px;
+      background: #1E3A5F;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-next:hover { background: #162C47; }
+    .error {
+      background: #FFF5F5;
+      border: 1px solid #FC8181;
+      border-radius: 6px;
+      padding: 16px;
+      color: #C53030;
+      font-size: 0.9rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Back to Dashboard</a>
+    <h1>Module 0 — Get Your Ground Game Ready</h1>
+    <p>Before building any case, you need to know exactly who you're speaking to, what you need from them, and what's at stake.</p>
+  </header>
+  <main>
+    <div class="card" id="form-section">
+      <div class="field">
+        <label for="name">Your name and organization</label>
+        <input type="text" id="name" placeholder="e.g. Jane Doe / Community Health Coalition">
+      </div>
+      <div class="field">
+        <label for="stakeholder">Who is your specific target stakeholder?</label>
+        <div class="hint">Include their name and role.</div>
+        <input type="text" id="stakeholder" placeholder="e.g. Maria Lopez, Deputy Commissioner, County Health Dept.">
+      </div>
+      <div class="field">
+        <label for="action">What specific action do you need them to take?</label>
+        <textarea id="action" placeholder="e.g. Approve funding for a peer support navigator program in the county budget"></textarea>
+      </div>
+      <div class="field">
+        <label for="challenge">What is the ultimate adaptive challenge you are trying to solve?</label>
+        <div class="hint">The big-picture problem, beyond this one ask.</div>
+        <textarea id="challenge" placeholder="e.g. A fragmented, under-resourced behavioral health system that leaves people in crisis with nowhere to turn"></textarea>
+      </div>
+      <div class="field">
+        <label>What level of power are you trying to influence?</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="power" value="Internal Staff">
+            <span>Internal Staff <small>Colleagues, team members, or staff within your own organization</small></span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="power" value="Gatekeeper">
+            <span>Gatekeeper <small>Someone who controls access to a decision-maker or resource</small></span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="power" value="Broader Public">
+            <span>Broader Public <small>Community members, voters, or a general audience</small></span>
+          </label>
+        </div>
+      </div>
+      <div class="error" id="error-msg">Something went wrong. Please try again.</div>
+      <button class="btn-submit" id="submit-btn" onclick="submitForm()">Build My Stakeholder Profile →</button>
+    </div>
+
+    <div class="spinner" id="spinner">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="16" stroke="#E2E8F0" stroke-width="4"/>
+        <path d="M20 4a16 16 0 0 1 16 16" stroke="#1E3A5F" stroke-width="4" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.8s" repeatCount="indefinite"/>
+        </path>
+      </svg>
+      <p>Building your stakeholder profile...</p>
+    </div>
+
+    <div class="card output-section" id="output-section">
+      <h2>Your Stakeholder Intelligence Summary</h2>
+      <div class="output-content" id="output-content"></div>
+      <a href="module-1.html" class="btn-next">Continue to Module 1 — Craft the Vision →</a>
+    </div>
+  </main>
+
+  <script>
+    async function submitForm() {
+      const name = document.getElementById('name').value.trim();
+      const stakeholder = document.getElementById('stakeholder').value.trim();
+      const action = document.getElementById('action').value.trim();
+      const challenge = document.getElementById('challenge').value.trim();
+      const powerEl = document.querySelector('input[name="power"]:checked');
+
+      if (!name || !stakeholder || !action || !challenge || !powerEl) {
+        document.getElementById('error-msg').style.display = 'block';
+        document.getElementById('error-msg').textContent = 'Please complete all fields before continuing.';
+        return;
+      }
+
+      document.getElementById('error-msg').style.display = 'none';
+      document.getElementById('submit-btn').disabled = true;
+      document.getElementById('spinner').style.display = 'block';
+
+      try {
+        const res = await fetch('https://n8n.srv1115812.hstgr.cloud/webhook/scm-module-0', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            stakeholder,
+            action,
+            challenge,
+            power: powerEl.value
+          })
+        });
+
+        if (!res.ok) throw new Error('Webhook error');
+        const data = await res.json();
+
+        localStorage.setItem('scm_session_id', data.session_id);
+
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('form-section').style.display = 'none';
+        document.getElementById('output-section').style.display = 'block';
+        document.getElementById('output-content').innerHTML = marked.parse(data.output);
+
+      } catch (err) {
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('submit-btn').disabled = false;
+        document.getElementById('error-msg').style.display = 'block';
+        document.getElementById('error-msg').textContent = 'Something went wrong. Please try again in a moment.';
+      }
+    }
+  </script>
+</body>
+</html>

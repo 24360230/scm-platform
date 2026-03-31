@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preparation Guide | SCM Platform</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F8F9FA;
+      color: #2D3748;
+      line-height: 1.6;
+    }
+    header {
+      background: #1E3A5F;
+      color: white;
+      padding: 32px 24px;
+    }
+    header a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+    header a:hover { color: white; }
+    header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 6px; }
+    header p { opacity: 0.85; font-size: 0.95rem; max-width: 580px; }
+    main {
+      max-width: 680px;
+      margin: 40px auto;
+      padding: 0 24px 60px;
+    }
+    .intro {
+      background: #EBF4FF;
+      border-left: 4px solid #1E3A5F;
+      border-radius: 0 6px 6px 0;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      font-size: 0.9rem;
+      color: #2C5282;
+    }
+    .module-section {
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #E2E8F0;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .module-header {
+      background: #1E3A5F;
+      color: white;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .module-number {
+      background: rgba(255,255,255,0.2);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .module-header h2 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .module-header p {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
+    .module-body {
+      padding: 24px;
+    }
+    .checklist {
+      list-style: none;
+    }
+    .checklist li {
+      padding: 10px 0;
+      border-bottom: 1px solid #F0F4F8;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.92rem;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .check-box {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #CBD5E0;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .item-label { font-weight: 600; display: block; margin-bottom: 2px; }
+    .item-hint { color: #718096; font-size: 0.85rem; }
+    .tip {
+      background: #F0FFF4;
+      border-left: 4px solid #38A169;
+      border-radius: 0 6px 6px 0;
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      color: #276749;
+      margin-top: 16px;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 32px;
+    }
+    .btn {
+      display: inline-block;
+      background: #C47B1A;
+      color: white;
+      padding: 16px 40px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #A66515; }
+    .print-btn {
+      display: inline-block;
+      background: white;
+      color: #1E3A5F;
+      border: 2px solid #1E3A5F;
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-right: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .print-btn:hover { background: #EBF4FF; }
+
+    @media print {
+      header a, .cta { display: none; }
+      body { background: white; }
+      .module-header { background: #1E3A5F !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .check-box { border: 2px solid #333; }
+      main { margin: 0; padding: 0; max-width: 100%; }
+      .module-section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Back to Dashboard</a>
+    <h1>Before You Begin — Preparation Guide</h1>
+    <p>Gather this information before starting. The more specific your inputs, the stronger your case.</p>
+  </header>
+  <main>
+    <div class="intro">
+      Strategic Casemaking is a deliberate process. Taking 30 minutes to think through these questions before you start will produce dramatically better outputs than filling in the forms cold. You can print this page or save it as a PDF to work through offline.
+    </div>
+
+    <div class="module-section">
+      <div class="module-header">
+        <div class="module-number">0</div>
+        <div>
+          <h2>Ground Game</h2>
+          <p>Know your target before you build your case</p>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="checklist">
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">Your name and organization</span>
+              <span class="item-hint">How you want to be identified throughout the platform</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">Target stakeholder — full name and role</span>
+              <span class="item-hint">Be specific: "Maria Lopez, Deputy Commissioner, County Health Dept." not just "a county official"</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">The specific action you need them to take</span>
+              <span class="item-hint">One concrete ask: approve a budget line, sign a letter, attend a meeting, commit funding</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">The adaptive challenge — the big-picture problem</span>
+              <span class="item-hint">The systemic issue your ask is trying to address, beyond this one transaction</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">Level of power: Internal Staff, Gatekeeper, or Broader Public</span>
+              <span class="item-hint">This shapes how the case is framed throughout all modules</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="module-section">
+      <div class="module-header">
+        <div class="module-number">1</div>
+        <div>
+          <h2>Act 1 — Craft the Vision</h2>
+          <p>Values, aspirations, and shared stake</p>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="checklist">
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">One core value you and your stakeholder genuinely share</span>
+              <span class="item-hint">Not what you wish they valued — what they actually care about. Dignity, opportunity, safety, belonging, fiscal responsibility</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">Your vision of a thriving community 10–15 years from now</span>
+              <span class="item-hint">Sensory and specific — what does it look like, feel like, sound like? Avoid policy language</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">The everyday heroes already doing this work</span>
+              <span class="item-hint">Name people, not organizations — teachers, coaches, neighbors, parents, community health workers</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">Shared history or common ground with your stakeholder</span>
+              <span class="item-hint">A past moment, shared challenge, or mutual experience that creates a "Big WE"</span>
+            </div>
+          </li>
+        </ul>
+        <div class="tip">Do not mention the problem, the crisis, or the ask in Act 1. This module is values and vision only.</div>
+      </div>
+    </div>
+
+    <div class="module-section">
+      <div class="module-header">
+        <div class="module-number">2</div>
+        <div>
+          <h2>Act 2 — Name the Obstacles</h2>
+          <p>Systemic villain, dominant narratives, urgency</p>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="checklist">
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">The issue and geographic context</span>
+              <span class="item-hint">Specific enough to drive real research — "adolescent mental health in rural Western New York" not just "mental health"</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">The common myth your stakeholder believes</span>
+              <span class="item-hint">The "bedtime story" — the narrative that creates a barrier to action. You won't repeat it, but you need to know it</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">The failing system, policy, or incentive structure</span>
+              <span class="item-hint">The structural villain — never a person or group. What was designed in a way that fails people even when individuals try their best?</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">Three things your stakeholder is afraid to lose if nothing changes</span>
+              <span class="item-hint">Think about their role, reputation, and what they're accountable for — not what you think should matter to them</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">What makes this urgent right now</span>
+              <span class="item-hint">A current event, funding window, policy change, or data point that creates a genuine moment</span>
+            </div>
+          </li>
+        </ul>
+        <div class="tip">Act 2 takes the longest to get right. The research module will pull external data, but your inputs about this specific stakeholder's fears are irreplaceable.</div>
+      </div>
+    </div>
+
+    <div class="module-section">
+      <div class="module-header">
+        <div class="module-number">3</div>
+        <div>
+          <h2>Act 3 — Present the Breakthrough</h2>
+          <p>Proof points, value proposition, and the ask</p>
+        </div>
+      </div>
+      <div class="module-body">
+        <ul class="checklist">
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">A concrete proof point where this solution has already worked</span>
+              <span class="item-hint">Anywhere, any scale — a specific community, program, or initiative with real outcomes</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">Your organization or coalition's unique assets</span>
+              <span class="item-hint">Relationships, infrastructure, credibility, track record — things that can't be bought or built quickly</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">Short-term metrics of success</span>
+              <span class="item-hint">What does year one look like? Specific, measurable, credible</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">Long-term metrics of success</span>
+              <span class="item-hint">The 3–5 year horizon — the systemic change you're working toward</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">Your specific ask</span>
+              <span class="item-hint">Dollar amount, time commitment, policy action — as precise as possible</span>
+            </div>
+          </li>
+          <li>
+            <div class="check-box"></div>
+            <div>
+              <span class="item-label">A Social Math anchor — a relatable consumer expense</span>
+              <span class="item-hint">Something your stakeholder spends money on that can be compared to your ask — monthly internet bill, a family dinner out, a car payment</span>
+            </div>
+          </li>
+        </ul>
+        <div class="tip">Act 3 is where credentials belong — but only after the case for the issue has already been made. Don't lead with "about us."</div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+      <a href="module-0.html" class="btn">I'm Ready — Start Building →</a>
+    </div>
+  </main>
+</body>
+</html>

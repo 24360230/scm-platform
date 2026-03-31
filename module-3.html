@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 3 — Present the Breakthrough | SCM Platform</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F8F9FA;
+      color: #2D3748;
+      line-height: 1.6;
+    }
+    header {
+      background: #1E3A5F;
+      color: white;
+      padding: 32px 24px;
+    }
+    header a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+    header a:hover { color: white; }
+    header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 6px; }
+    header p { opacity: 0.85; font-size: 0.95rem; max-width: 580px; }
+    main {
+      max-width: 680px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    .framing {
+      background: #EBF4FF;
+      border-left: 4px solid #1E3A5F;
+      border-radius: 0 6px 6px 0;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      color: #2C5282;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 32px;
+      border: 1px solid #E2E8F0;
+      margin-bottom: 24px;
+    }
+    .field { margin-bottom: 24px; }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+    .hint {
+      font-size: 0.85rem;
+      color: #718096;
+      margin-bottom: 8px;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #CBD5E0;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: #2D3748;
+      background: #FAFAFA;
+      transition: border-color 0.2s;
+    }
+    input[type="text"]:focus, textarea:focus {
+      outline: none;
+      border-color: #1E3A5F;
+      background: white;
+    }
+    textarea { resize: vertical; min-height: 90px; }
+    .btn-submit {
+      width: 100%;
+      background: #C47B1A;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { background: #A66515; }
+    .btn-submit:disabled { background: #CBD5E0; cursor: not-allowed; }
+    .spinner {
+      display: none;
+      text-align: center;
+      padding: 32px;
+      color: #718096;
+    }
+    .spinner p { margin-top: 12px; font-size: 0.95rem; }
+    .output-section { display: none; }
+    .output-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #1E3A5F;
+    }
+    .output-content {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .output-content h2, .output-content h3 {
+      margin: 16px 0 8px;
+      color: #1E3A5F;
+    }
+    .output-content p { margin-bottom: 12px; }
+    .output-content strong { color: #2D3748; }
+    .coming-soon {
+      display: inline-block;
+      margin-top: 24px;
+      background: #E2E8F0;
+      color: #718096;
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .error {
+      background: #FFF5F5;
+      border: 1px solid #FC8181;
+      border-radius: 6px;
+      padding: 16px;
+      color: #C53030;
+      font-size: 0.9rem;
+      display: none;
+      margin-bottom: 16px;
+    }
+    .no-session {
+      background: #FFFAF0;
+      border: 1px solid #F6AD55;
+      border-radius: 6px;
+      padding: 16px 20px;
+      color: #744210;
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      display: none;
+    }
+    .research-note {
+      background: #F0FFF4;
+      border-left: 4px solid #38A169;
+      border-radius: 0 6px 6px 0;
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      color: #276749;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Back to Dashboard</a>
+    <h1>Module 3 — Present the Breakthrough</h1>
+    <p>Anchor your solution, credential your coalition, and close with a clear ask.</p>
+  </header>
+  <main>
+    <div class="framing">
+      <strong>Act 3 is where solutions belong — not before.</strong> By this point your stakeholder understands the shared vision and the systemic barrier. Now you position your organization as the strategic partner ready to execute a proven solution with clear, measurable results.
+    </div>
+
+    <div class="research-note">
+      🔍 This module uses live research to find proof points and Social Math relevant to your solution. It may take 20–30 seconds to complete.
+    </div>
+
+    <div class="no-session" id="no-session">
+      ⚠️ No active session found. Please <a href="module-0.html">complete Module 0 first</a> before continuing.
+    </div>
+
+    <div class="card" id="form-section">
+      <div class="field">
+        <label for="solution">What is the solution or approach you are proposing?</label>
+        <div class="hint">Be specific — this drives the proof point research.</div>
+        <input type="text" id="solution" placeholder="e.g. coordinated digital equity coalition with digital navigator infrastructure">
+      </div>
+      <div class="field">
+        <label for="geography">What is the geographic context?</label>
+        <div class="hint">Same region as Module 2.</div>
+        <input type="text" id="geography" placeholder="e.g. rural Western New York">
+      </div>
+      <div class="field">
+        <label for="proof_point">What is a concrete proof point where this solution has already worked?</label>
+        <div class="hint">Anywhere, any scale — name the place, program, and outcome if you can.</div>
+        <textarea id="proof_point" placeholder="e.g. The Connect Humanity fund in rural Appalachia reduced unconnected households by 34% in three years through coordinated coalition infrastructure"></textarea>
+      </div>
+      <div class="field">
+        <label for="assets">What unique assets does your organization or coalition bring?</label>
+        <div class="hint">Relationships, infrastructure, credibility, track record — things that can't be bought quickly.</div>
+        <textarea id="assets" placeholder="e.g. Established relationships across 8 counties, existing broadband data infrastructure, trusted community anchor institutions"></textarea>
+      </div>
+      <div class="field">
+        <label for="metrics_short">What are your short-term metrics of success?</label>
+        <div class="hint">Year one — specific and measurable.</div>
+        <input type="text" id="metrics_short" placeholder="e.g. 500 new households connected, 12 anchor institutions offering digital navigator services">
+      </div>
+      <div class="field">
+        <label for="metrics_long">What are your long-term metrics of success?</label>
+        <div class="hint">The 3–5 year horizon.</div>
+        <input type="text" id="metrics_long" placeholder="e.g. 25% reduction in unconnected households across 8 WNY counties within 5 years">
+      </div>
+      <div class="field">
+        <label for="ask">What is your specific ask?</label>
+        <div class="hint">Dollar amount, time commitment, policy action — as precise as possible.</div>
+        <input type="text" id="ask" placeholder="e.g. A three-year $150,000 investment in coalition infrastructure and digital navigator capacity">
+      </div>
+      <div class="field">
+        <label for="social_math_anchor">What is a relatable consumer expense to anchor your Social Math?</label>
+        <div class="hint">Something your stakeholder spends money on that can be compared to your ask.</div>
+        <input type="text" id="social_math_anchor" placeholder="e.g. monthly internet service subscription">
+      </div>
+      <div class="error" id="error-msg">Please complete all fields before continuing.</div>
+      <button class="btn-submit" id="submit-btn" onclick="submitForm()">Build My Breakthrough →</button>
+    </div>
+
+    <div class="spinner" id="spinner">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="16" stroke="#E2E8F0" stroke-width="4"/>
+        <path d="M20 4a16 16 0 0 1 16 16" stroke="#1E3A5F" stroke-width="4" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.8s" repeatCount="indefinite"/>
+        </path>
+      </svg>
+      <p>Researching proof points and building your breakthrough...<br><small style="color:#A0AEC0">This may take 20–30 seconds.</small></p>
+    </div>
+
+    <div class="card output-section" id="output-section">
+      <h2>Your Breakthrough Narrative</h2>
+      <div class="output-content" id="output-content"></div>
+      <div class="coming-soon">Module 4 — Full Case Synthesizer (coming soon)</div>
+    </div>
+  </main>
+
+  <script>
+    const sessionId = localStorage.getItem('scm_session_id');
+    if (!sessionId) {
+      document.getElementById('no-session').style.display = 'block';
+      document.getElementById('submit-btn').disabled = true;
+    }
+
+    async function submitForm() {
+      const solution = document.getElementById('solution').value.trim();
+      const geography = document.getElementById('geography').value.trim();
+      const proof_point = document.getElementById('proof_point').value.trim();
+      const assets = document.getElementById('assets').value.trim();
+      const metrics_short = document.getElementById('metrics_short').value.trim();
+      const metrics_long = document.getElementById('metrics_long').value.trim();
+      const ask = document.getElementById('ask').value.trim();
+      const social_math_anchor = document.getElementById('social_math_anchor').value.trim();
+
+      if (!solution || !geography || !proof_point || !assets || !metrics_short || !metrics_long || !ask || !social_math_anchor) {
+        document.getElementById('error-msg').style.display = 'block';
+        return;
+      }
+
+      document.getElementById('error-msg').style.display = 'none';
+      document.getElementById('submit-btn').disabled = true;
+      document.getElementById('spinner').style.display = 'block';
+
+      try {
+        const res = await fetch('https://n8n.srv1115812.hstgr.cloud/webhook/scm-module-3', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            session_id: sessionId,
+            solution,
+            geography,
+            proof_point,
+            assets,
+            metrics_short,
+            metrics_long,
+            ask,
+            social_math_anchor
+          })
+        });
+
+        if (!res.ok) throw new Error('Webhook error');
+        const data = await res.json();
+
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('form-section').style.display = 'none';
+        document.getElementById('output-section').style.display = 'block';
+        document.getElementById('output-content').innerHTML = marked.parse(data.output);
+
+      } catch (err) {
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('submit-btn').disabled = false;
+        document.getElementById('error-msg').style.display = 'block';
+        document.getElementById('error-msg').textContent = 'Something went wrong. Please try again in a moment.';
+      }
+    }
+  </script>
+</body>
+</html>

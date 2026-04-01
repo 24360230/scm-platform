@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 4 — Full Case Synthesizer | SCM Platform</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F8F9FA;
+      color: #2D3748;
+      line-height: 1.6;
+    }
+    header {
+      background: #1E3A5F;
+      color: white;
+      padding: 32px 24px;
+    }
+    header a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+    header a:hover { color: white; }
+    header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 6px; }
+    header p { opacity: 0.85; font-size: 0.95rem; max-width: 580px; }
+    main {
+      max-width: 680px;
+      margin: 40px auto;
+      padding: 0 24px 60px;
+    }
+    .framing {
+      background: #EBF4FF;
+      border-left: 4px solid #1E3A5F;
+      border-radius: 0 6px 6px 0;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      color: #2C5282;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 32px;
+      border: 1px solid #E2E8F0;
+      margin-bottom: 24px;
+    }
+    .checklist {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .checklist li {
+      padding: 8px 0;
+      border-bottom: 1px solid #F0F4F8;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .check {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+    .check.complete { background: #38A169; color: white; }
+    .check.incomplete { background: #CBD5E0; color: white; }
+    .btn-submit {
+      width: 100%;
+      background: #C47B1A;
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 6px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { background: #A66515; }
+    .btn-submit:disabled { background: #CBD5E0; cursor: not-allowed; }
+    .spinner {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      color: #718096;
+    }
+    .spinner p { margin-top: 12px; font-size: 0.95rem; }
+    .output-section { display: none; }
+    .output-block {
+      background: white;
+      border-radius: 8px;
+      padding: 32px;
+      border: 1px solid #E2E8F0;
+      margin-bottom: 24px;
+    }
+    .output-block h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1E3A5F;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #EBF4FF;
+    }
+    .output-content {
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+    .output-content p { margin-bottom: 12px; }
+    .output-content strong { color: #2D3748; }
+    .copy-btn {
+      margin-top: 16px;
+      background: white;
+      color: #1E3A5F;
+      border: 1px solid #CBD5E0;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover { background: #EBF4FF; border-color: #1E3A5F; }
+    .error {
+      background: #FFF5F5;
+      border: 1px solid #FC8181;
+      border-radius: 6px;
+      padding: 16px;
+      color: #C53030;
+      font-size: 0.9rem;
+      display: none;
+      margin-bottom: 16px;
+    }
+    .no-session {
+      background: #FFFAF0;
+      border: 1px solid #F6AD55;
+      border-radius: 6px;
+      padding: 16px 20px;
+      color: #744210;
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      display: none;
+    }
+    .complete-banner {
+      background: #F0FFF4;
+      border: 1px solid #38A169;
+      border-radius: 8px;
+      padding: 20px 24px;
+      color: #276749;
+      font-size: 0.95rem;
+      margin-top: 24px;
+      text-align: center;
+    }
+    .complete-banner strong { display: block; font-size: 1.05rem; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Back to Dashboard</a>
+    <h1>Module 4 — Full Case Synthesizer</h1>
+    <p>Weave all three Acts into a complete, polished, ready-to-deliver Strategic Case.</p>
+  </header>
+  <main>
+    <div class="framing">
+      <strong>You've done the hard work.</strong> This module pulls everything you've built across Modules 0–3 and weaves it into three deliverables: a 2-Minute Elevator Pitch, a Pivot Script for live objections, and a Yes Ladder to close on your ask.
+    </div>
+
+    <div class="no-session" id="no-session">
+      ⚠️ No active session found. Please <a href="module-0.html">complete Module 0 first</a> before continuing.
+    </div>
+
+    <div class="card" id="ready-section">
+      <p style="margin-bottom:20px; font-size:0.95rem;">Your completed modules will be synthesized into a full Strategic Case. This typically takes 20–30 seconds.</p>
+      <ul class="checklist" id="module-checklist">
+        <li><div class="check incomplete" id="check-0">?</div> Module 0 — Ground Game</li>
+        <li><div class="check incomplete" id="check-1">?</div> Module 1 — Craft the Vision</li>
+        <li><div class="check incomplete" id="check-2">?</div> Module 2 — Name the Obstacles</li>
+        <li><div class="check incomplete" id="check-3">?</div> Module 3 — Present the Breakthrough</li>
+      </ul>
+      <div class="error" id="error-msg">Something went wrong. Please try again in a moment.</div>
+      <button class="btn-submit" id="submit-btn" onclick="submitForm()">Generate My Full Case →</button>
+    </div>
+
+    <div class="spinner" id="spinner">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="16" stroke="#E2E8F0" stroke-width="4"/>
+        <path d="M20 4a16 16 0 0 1 16 16" stroke="#1E3A5F" stroke-width="4" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.8s" repeatCount="indefinite"/>
+        </path>
+      </svg>
+      <p>Synthesizing your full Strategic Case...<br><small style="color:#A0AEC0">This may take 20–30 seconds.</small></p>
+    </div>
+
+    <div class="output-section" id="output-section">
+      <div class="output-block">
+        <h2>The 2-Minute Elevator Pitch</h2>
+        <div class="output-content" id="output-pitch"></div>
+        <button class="copy-btn" onclick="copySection('output-pitch', this)">Copy to clipboard</button>
+      </div>
+      <div class="output-block">
+        <h2>The Pivot Script</h2>
+        <div class="output-content" id="output-pivot"></div>
+        <button class="copy-btn" onclick="copySection('output-pivot', this)">Copy to clipboard</button>
+      </div>
+      <div class="output-block">
+        <h2>The Yes Ladder</h2>
+        <div class="output-content" id="output-ladder"></div>
+        <button class="copy-btn" onclick="copySection('output-ladder', this)">Copy to clipboard</button>
+      </div>
+      <div class="complete-banner">
+        <strong>Your Strategic Case is complete.</strong>
+        You now have everything you need to deliver a complete, persuasive Strategic Case to your stakeholder.
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const sessionId = localStorage.getItem('scm_session_id');
+
+    if (!sessionId) {
+      document.getElementById('no-session').style.display = 'block';
+      document.getElementById('submit-btn').disabled = true;
+    }
+
+    async function submitForm() {
+      document.getElementById('error-msg').style.display = 'none';
+      document.getElementById('submit-btn').disabled = true;
+      document.getElementById('spinner').style.display = 'block';
+      document.getElementById('ready-section').style.display = 'none';
+
+      try {
+        const res = await fetch('https://n8n.srv1115812.hstgr.cloud/webhook/scm-module-4', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ session_id: sessionId })
+        });
+
+        if (!res.ok) throw new Error('Webhook error');
+        const data = await res.json();
+
+        const output = data.output;
+
+        // Split output into three sections
+        const pitchMatch = output.match(/THE 2-MINUTE ELEVATOR PITCH([\s\S]*?)(?=THE PIVOT SCRIPT|$)/i);
+        const pivotMatch = output.match(/THE PIVOT SCRIPT([\s\S]*?)(?=THE YES LADDER|$)/i);
+        const ladderMatch = output.match(/THE YES LADDER([\s\S]*?)$/i);
+
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('output-section').style.display = 'block';
+
+        document.getElementById('output-pitch').innerHTML = marked.parse(pitchMatch ? pitchMatch[1].trim() : output);
+        document.getElementById('output-pivot').innerHTML = marked.parse(pivotMatch ? pivotMatch[1].trim() : '');
+        document.getElementById('output-ladder').innerHTML = marked.parse(ladderMatch ? ladderMatch[1].trim() : '');
+
+      } catch (err) {
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('ready-section').style.display = 'block';
+        document.getElementById('submit-btn').disabled = false;
+        document.getElementById('error-msg').style.display = 'block';
+      }
+    }
+
+    function copySection(id, btn) {
+      const el = document.getElementById(id);
+      const text = el.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy to clipboard', 2000);
+      });
+    }
+  </script>
+</body>
+</html>
